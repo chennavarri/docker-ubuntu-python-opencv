@@ -21,9 +21,8 @@ RUN cd ~/ &&\
     git clone https://github.com/Itseez/opencv.git &&\
     git clone https://github.com/Itseez/opencv_contrib.git &&\
     cd opencv && mkdir build && cd build && cmake  -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
-    make -j4 && make install && ldconfig
+    make -j4 && make install && ldconfig && rm -rf ~/opencv*  # Remove the opencv folders to reduce image size
 
 # Set the appropriate link
 RUN ln /dev/null /dev/raw1394
 
-RUN cd ~/opencv
