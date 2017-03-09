@@ -11,5 +11,7 @@ Running this image on Mac OSX with X11 forwarding could be a bit tricky. Here ar
   - socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" &
   - xhost +
   - Open your XQuartz and in the X11 preferences-> Security tab-> [Check both i.e. "Authenticate connections" and "Allow connections from network clients"
-
+  - Then open Kitematic and select  File->Open Docker Command Line Terminal
+  - Determine your IP address from ifconfig command and then,
+  - Replace the IP address in this command with your IP and run `docker run --rm -e DISPLAY=281.215.007.007:0 -it image_name`
 
